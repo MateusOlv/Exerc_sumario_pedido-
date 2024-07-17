@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
@@ -34,7 +35,7 @@ public class Main {
 		System.out.print("How many items to this order? ");
 		Integer n = sc.nextInt();
 		
-		Order order = new Order(LocalDate.now(), OrderStatus.valueOf(orderStatus), client);
+		Order order = new Order(LocalDateTime.now(), OrderStatus.valueOf(orderStatus), client);
 		
 		for(int i = 0 ; i < n ; i++) {
 			System.out.println("Enter #"+ (i + 1) + " item data: ");
@@ -51,11 +52,8 @@ public class Main {
 			order.addItem(orderItem);
 		}
 		
-		
-		
-		
-		
-		
+		System.out.println();
+		System.out.println(order);
 		sc.close();
 	}
 
